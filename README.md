@@ -1,9 +1,53 @@
+# Haydn: A font package for lilypond
+
+<p align="center">
+  <a href="./example.ly">
+  <img
+    src="https://raw.githubusercontent.com/lyp-packages/haydn/master/example.png">
+  </a>
+</p>
+
+This package provides the Haydn font for lilypond, created by [Abraham Lee](https://github.com/tisimst), found in  [OpenLilypondFonts](https://github.com/OpenLilypondFonts) and repackaged for usage as a lyp package@.
+
+## Installation
+
+Install using [lyp](https://github.com/noteflakes/lyp):
+
+```bash
+$ lyp install haydn
+```
+
+## Usage
+
+```lilypond
+\require "haydn"
+
+% Use Haydn font and apply associated stylesheet
+\useHaydnStyleSheet
+
+% To use font only:
+#(set-global-staff-size 16)  % this MUST go PRIOR to defining the fonts!!!
+\paper {
+  #(define fonts
+    (set-global-fonts
+      #:music "haydn"
+      #:brace "haydn"
+      #:factor (/ staff-height pt 20)
+  ))
+}
+```
+
+Also see the included [example](./example.ly).
+
+## Compatibility with Lilypond versions
+
+This font is known to work in Lilypond version 2.18.2 or later.
+
 FONTLOG for the Haydn font
-==========================
+--------------------------
 
 This file provides detailed information on the Haydn Font Software. This information should be
 distributed along with the Haydn fonts and any derivative works.
-
 
 Basic font information
 ----------------------
